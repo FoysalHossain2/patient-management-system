@@ -7,7 +7,7 @@ export default function Home() {
     <div className="flex h-screen max-h-screen">
       <section className="remove-scrollbar container my-auto">
         <div className="sub-container max-w-[496px]">
-          <Image src="/logo-full.png" alt="patient" height={100} width={100} />
+          <Image src="/logo-full.png" alt="patient" height={200} width={200} />
 
           <PatientForm />
 
