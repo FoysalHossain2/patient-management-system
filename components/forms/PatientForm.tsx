@@ -14,6 +14,18 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import CustomFormFiled from "../common/CustomFormFiled";
+import { Input } from "postcss";
+
+// enum
+export enum FormFieldType{
+  INPUT = 'input',
+  TEXTAREA = 'textarea',
+  PHONE_INPUT = 'phonmeInput',
+  CHECKBOX = 'çheckbox',
+  DATE_PIKER = 'datePicker',
+  SELECET = 'select',
+  SKELETON = 'skeleton',
+};
 
 const formSchema = z.object({
   username: z.string().min(2, {
@@ -41,7 +53,15 @@ export function PatientForm() {
           <p className="text-dark-700">Schedule your first appointment</p>
         </section>
 
-        <CustomFormFiled control={form.control} />
+        <CustomFormFiled 
+         control={form.control}
+          fieldType={FormFieldType.INPUT}
+          name="name"
+          lable="Full Name"
+          placeholder="John Doe"
+          iconSrc="/assets/icons/user.svg"
+          iconAlt="User"
+         />
         
         <Button type="submit">Submit</Button>
       </form>
